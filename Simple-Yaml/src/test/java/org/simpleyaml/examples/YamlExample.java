@@ -42,6 +42,7 @@ public final class YamlExample {
 
         yamlFile.addDefault("test.number", 5);
         yamlFile.addDefault("test.string", "Hello world");
+        yamlFile.addDefault("test.stringReplacements", "Hello world %name%");
         yamlFile.addDefault("test.boolean", true);
 
         yamlFile.set("math.pi", Math.PI);
@@ -92,6 +93,9 @@ public final class YamlExample {
         System.out.println("Formatted Date: " + yamlFile.getString("timestamp.formattedDate"));
 
         // We can iterate over sections with getKeys(deep) and getValues(deep) methods
+        System.out.println("Get string with replacements: " + yamlFile.getString("test.stringReplacements", new String[][]{
+                {"%name%", "Osvaldo"}
+        }));
 
         section.getValues(false).entrySet().forEach(System.out::println); // false is not recursive
 

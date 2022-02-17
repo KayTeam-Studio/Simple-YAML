@@ -319,6 +319,26 @@ public class MemorySection implements ConfigurationSection {
     }
 
     // Primitives
+    public String getString(final String path, String[][] replacements) {
+        String string = getString(path);
+        for (String[] replacement:replacements) {
+            String regex = replacement[0];
+            String substitute = replacement[1];
+            string = string.replaceAll(regex, substitute);
+        }
+        return string;
+    }
+
+    public String getString(final String path, String[][] replacements, final String def) {
+        String string = getString(path, def);
+        for (String[] replacement:replacements) {
+            String regex = replacement[0];
+            String substitute = replacement[1];
+            string = string.replaceAll(regex, substitute);
+        }
+        return string;
+    }
+
     @Override
     public String getString(final String path) {
         final Object def = this.getDefault(path);
@@ -420,6 +440,20 @@ public class MemorySection implements ConfigurationSection {
     public boolean isList(final String path) {
         final Object val = this.get(path);
         return val instanceof List;
+    }
+
+    public List<String> getStringList(final String path, String[][] replacements) {
+        List<String> stringList = getStringList(path);
+        for (int i = 0; i < stringList.size(); i++) {
+            String string = stringList.get(0);
+            for (String[] replacement:replacements) {
+                String regex = replacement[0];
+                String substitute = replacement[1];
+                string = string.replaceAll(regex, substitute);
+            }
+            stringList.set(0, string);
+        }
+        return stringList;
     }
 
     @Override
