@@ -49,7 +49,7 @@ If you are using Maven you do not need to download the jar. Instead, add this re
 <dependency>
     <groupId>me.carleslc.Simple-YAML</groupId>
     <artifactId>Simple-Yaml</artifactId>
-    <version>1.7.3</version>
+    <version>1.7.4</version>
 </dependency>
 ```
 

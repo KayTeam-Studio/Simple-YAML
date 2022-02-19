@@ -7,12 +7,12 @@
     <parent>
         <artifactId>Simple-YAML-Parent</artifactId>
         <groupId>me.carleslc.simpleyaml</groupId>
-        <version>1.7.3</version>
+        <version>1.7.5</version>
     </parent>
     <artifactId>Simple-Yaml</artifactId>
     <groupId>me.carleslc</groupId>
     <name>Simple-Yaml</name>
-    <version>1.7.3</version>
+    <version>1.7.5</version>
 
     <dependencies>
         <dependency>
